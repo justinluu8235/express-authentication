@@ -12,7 +12,7 @@ console.log(SECRET_SESSION);
 
 app.set('view engine', 'ejs');
 
-app.use(require('morgan')('dev'));
+app.use(require('morgan')('dev'));    //morgan is for testing
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
@@ -22,7 +22,7 @@ app.use(session({
   saveUninitialized: true    // If we have a new session, we save it, therefore making that true
 }));
 
-app.use(flash());
+app.use(flash());    // It's a message telling user whether they are logged in or not 
 
 app.use(passport.initialize());
 app.use(passport.session());
